@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Upstox add-on",
+    "version": "1.0",
+    "description": "This extension will give help your operation with upstox",
+    
+    "browser_action": {
+    "default_icon": "images/icon.png" ,
+    "icons": {                    
+        "16": "images/icon.png",           
+        "24": "images/icon.png",           
+        "32": "images/icon.png"            
+    },
+    "default_title": "Upstox add-on",     
+    "default_popup": "popup.html"      
+    },
+    "permissions": [
+    "tabs",
+    "activeTab",
+    "<all_urls>"
+    ],
+
+  "content_scripts":[{
+    "matches": ["<all_urls>"],
+       "js":["jquery-3.5.1.min.js","content.js"],
+       "run_at": "document_idle",
+       "all_frames": false
+       }],
+    "author": "Laxmikanta Kanta",
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
